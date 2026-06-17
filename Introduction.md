@@ -1,374 +1,73 @@
+import os
 
-## Learn Python
-Python is the #1 language for AI security.
-Focus on:
- Variables
- Functions APIs
- JSON File handling
- Requests Automation
+# Define the comprehensive markdown content based on the structured roadmap and user preferences
+markdown_content = """# Comprehensive Roadmap: AI + Cybersecurity Engineering
 
-Recommended:
-
- Python Official Tutorial
----
-# Phase 2 — Cybersecurity Fundamentals (2–4 Months)
-## Learn Security Basics
-Topics:
- Authentication
- Authorization Encryption
- Malware Phishing
- SIEM EDR
- SOC workflows
-Platforms:
- TryHackMe
- Hack The Box
----
-## Learn Logs and Detection
-Important logs:
- Windows Event Logs
- Sysmon Zeek
- Firewall logs
-Learn:
- Indicators of compromise (IOCs)
- Sigma rules MITRE ATT&CK
-
-Resources:
-
- MITRE ATT&CK Sigma Rules
+This repository contains a structured, end-to-end learning roadmap designed to take you from absolute zero to a capable AI Cybersecurity Engineer. By tracking foundations in software engineering and security operations in parallel, this curriculum bridges the gap between pure data science and defensive infrastructure.
 
 ---
 
-# Phase 3 — AI Fundamentals (2–3 Months)
+## 🗺️ The Master Progression
 
-## Learn AI Concepts
-
-Understand:
-
- Machine learning Neural networks
- Embeddings Transformers
- LLMs Tokens
- Fine-tuning RAG
-
----
-
-## Learn Local AI
-
-Install:
-
- Ollama LM Studio
-
-Run:
-
-ollama run llama3
+| Phase | Timeline | Focus Area | Primary Target |
+| :--- | :--- | :--- | :--- |
+| **Phase 1** | Months 1–2 | Python & Automation Foundations | Core syntax, script execution, parsing data formats |
+| **Phase 2** | Months 2–4 | Cybersecurity Fundamentals & Logging | Authentication, network architecture, Sysmon, Sigma |
+| **Phase 3** | Months 2–3 | AI Architecture & Local Inference | Matrix representations, vector embeddings, Ollama setups |
+| **Phase 4** | Months 1–2 | RAG Systems & Vector Pipelines | Information retrieval, tokenizing, persistent DB stores |
+| **Phase 5** | Advanced | AI Security Engineering Portfolio | Deploying analytical engines and behavioral monitors |
 
 ---
 
-# Phase 4 — Learn RAG Systems (1–2 Months)
+## 🛠️ Phase 1 — Python Foundations (1–2 Months)
+Python is the undisputed language for AI engineering and security automation. Before diving into neural networks or threat hunting, master these core automation mechanics.
 
-## Core RAG Components
+### Focus Areas
+* **Variables & Control Flow:** Loops (`for`, `while`), conditionals (`if/elif/else`), and standard data structures (`lists`, `dicts`, `sets`).
+* **Functions & APIs:** Writing modular, reusable code and interacting with REST endpoints using the `requests` library.
+* **Data Formats:** Parsing, converting, and schema-validation for **JSON** and **CSV** data (essential for handling raw security event metrics).
+* **File I/O:** Reading, chunking, writing, and appending system files, configuration trees, and flat-text security logs.
 
-| Component  | Purpose                    |
-| ---------- | -------------------------- |
-| LLM        | Generates answers          |
-| Embeddings | Converts text into vectors |
-| Vector DB  | Stores vectors             |
-| Retriever  | Finds relevant info        |
-| Prompt     | Guides AI                  |
-
----
-
-## Learn These Tools
-
-| Tool                 | Purpose          |
-| -------------------- | ---------------- |
-| LangChain            | AI orchestration |
-| ChromaDB             | Vector DB        |
-| SentenceTransformers | Embeddings       |
-| Streamlit            | Web UI           |
-
-Resources:
-
- LangChain Docs ChromaDB Docs
+> **Recommended Learning Resource:** [Python Official Tutorial](https://docs.python.org/3/tutorial/)
 
 ---
 
-# Phase 5 — AI Security Engineering (Advanced)
+## 🛡️ Phase 2 — Cybersecurity Fundamentals (2–4 Months)
 
-Build systems like:
+### Learn Security Basics
+You must understand what you are protecting before you can use machine learning to defend it. Focus on building a traditional enterprise security foundation.
 
- AI SOC assistant Malware analysis chatbot
- Threat hunting assistant AI phishing detector
- Log anomaly detector
----
-# Step-by-Step Local RAG Installation
-# Windows/Linux Installation Guide
----
-# Step 1 — Install Python
-Download:
- Python Downloads
+* **Identity & Access Management (IAM):** The functional differences between Authentication (AuthN - validating identity) and Authorization (AuthZ - enforcing access controls).
+* **Applied Cryptography:** Symmetric vs. asymmetric encryption, secure hashing algorithms (SHA-256), public key infrastructure, and secure transport layers (TLS/SSL).
+* **Threat Landscapes:** Mechanics of automated script execution, malware packing/delivery vectors, and social engineering architectures.
+* **Enterprise Operations:** Architectural interactions between **SIEM** (Security Information and Event Management), **EDR** (Endpoint Detection and Response), and modern **SOC** (Security Operations Center) triaging queues.
 
-Verify:
+> **Hands-on Practice Platforms:** [TryHackMe](https://tryhackme.com/) & [Hack The Box](https://www.hackthebox.com/)
 
-python --version
+### Learn Logs and Detection
+AI models are entirely bounded by the fidelity of the telemetry they ingest. In security engineering, that telemetry manifests as event streams.
 
----
+* **Critical Log Sources:** Windows Event Logs, Sysmon (System Monitor telemetry), Zeek (Network Traffic Analysis fields), and Enterprise Firewall packet headers.
+* **Threat Frameworks:** **MITRE ATT&CK®**—the comprehensive global matrix mapping adversary tactics, operational techniques, and specific mitigation vectors.
+* **Detection as Code:** Using **Sigma Rules** to write abstract, query-agnostic logging indicators that target suspicious behaviors rather than brittle IP/Hash artifacts.
 
-# Step 2 — Install Ollama
-
-Download:
-
- Ollama
-Run model:
-ollama run llama3
-
----
-# Step 3 — Create Project Folder
-mkdir local-rag
-cd local-rag
-
----
-# Step 4 — Create Virtual Environment
-Windows:
-python -m venv venv
-venv\Scripts\activate
-
-Linux:
-python3 -m venv venv
-source venv/bin/activate
-
----
-# Step 5 — Install Libraries
-pip install langchain chromadb sentence-transformers pypdf streamlit ollama
-
----
-# Step 6 — Add Documents
-Create folder:
-mkdir docs
-
-Ad
-d:
- PDFs
- Security reports Logs
- Threat intel
----
-# Step 7 — Simple RAG Python Script
-Create:
-rag.py
-
-Basic flow:
-from langchain_community.document_loaders import PyPDFLoaderfrom langchain.text_splitter import RecursiveCharacterTextSplitterfrom langchain.vectorstores import Chromafrom langchain.embeddings import HuggingFaceEmbeddings
-
-Then:
- Load PDFs
- Split text Generate embeddings
- Store in ChromaDB Query with Ollama
+> **Resources:** [MITRE ATT&CK Matrix](https://attack.mitre.org/) | [Sigma Rules Open Repository](https://github.com/SigmaHQ/sigma)
 
 ---
 
-# Step 8 — Run Your Chatbot
+## 🤖 Phase 3 — AI Fundamentals (2–3 Months)
 
-python rag.py
+### Learn Core AI Concepts
+Move past vendor marketing and master the concrete algorithmic mechanics driving modern high-dimensional text transformations.
 
----
+* **Classical ML vs. Neural Networks:** Linear classifiers and tree-based ensembles (Random Forests) vs. layered mathematical nodes backpropagating weights.
+* **Embeddings & Vectors:** The process of mapping semantic text to spatial configurations inside a high-dimensional vector space.
+* **Transformers & LLMs:** The foundational self-attention mechanics that allow modern large language models to weight tokens contextually.
+* **Tokens:** The fundamental structural parsing blocks of LLMs, and their direct impact on prompt calculation limits.
+* **Fine-Tuning vs. RAG:** Deciding when to modify permanent model weights via structural adjustments (Fine-Tuning) versus executing semantic context injection (Retrieval-Augmented Generation).
 
-# How To Train a Security-Focused Chatbot
+### Learn Local AI
+Running AI models locally is a foundational design requirement in cybersecurity to guarantee that sensitive corporate logging arrays, compliance data, and internal source code never exit the local network edge.
 
-There are 3 main approaches.
-
----
-
-# Option 1 — RAG (Recommended for Beginners)
-
-Best approach.
-
-Advantages:
-
- No expensive training Easier updates
- Uses your own security documents
-Feed:
- SOC playbooks
- Security PDFs Threat reports
- Incident logs
----
-# Option 2 — Fine-Tuning
-Train the model on security datasets.
-Used for:
- Malware classification
- Security Q&A Detection engineering
-
-Needs:
-
- GPU Large datasets
- ML knowledge
----
-# Option 3 — Instruction Tuning
-Teach the model how security analysts respond.
-Example:
-Input:
-Analyze this PowerShell command.
-
-Output:
-Potential malicious execution detected...
-
----
-# Security Chatbot Architecture
-User
- ↓
-Frontend UI
- ↓
-Retriever
- ↓
-Vector Database
- ↓
-LLM
- ↓
-Answer
-
----
-# Best Models for Security Chatbots
-| Model    | Good For             || -------- | -------------------- || Llama 3  | General AI           || Mistral  | Fast local inference || DeepSeek | Coding/security      || Qwen     | Strong reasoning     |
-Available on:
- Ollama Library
-
----
-
-# Best Laptop Specs for Local AI
-
-Running AI locally requires strong hardware.
-
----
-
-# Minimum Beginner Setup
-
-| Component | Recommended        |
-| --------- | ------------------ |
-| RAM       | 16GB               |
-| CPU       | Ryzen 7 / Intel i7 |
-| GPU       | RTX 3060+          |
-| Storage   | 1TB SSD            |
-
-Can run:
-
- 7B models Small RAG systems
-
----
-
-# Better AI Setup
-
-| Component | Recommended   |
-| --------- | ------------- |
-| RAM       | 32GB–64GB     |
-| GPU       | RTX 4070/4080 |
-| VRAM      | 12GB–16GB     |
-| CPU       | Ryzen 9 / i9  |
-
-Can run:
-
- Larger models Faster embeddings
- Better inference
----
-# Excellent AI Laptops
-Examples:
- Lenovo Legion Pro 7i
- ASUS ROG Strix G16 Dell XPS 15
- Framework Laptop 16
----
-# How SOC Teams Use AI in Real Companies
-Modern SOCs use AI for:
----
-## Alert Triage
-AI prioritizes alerts.
-Example:
-10,000 alerts/day
-↓
-AI filters important ones
-↓
-Analyst investigates only high-risk alerts
-
----
-## Threat Hunting
-Analysts ask AI:
-> “Find unusual PowerShell behavior.”
----
-## Incident Summarization
-AI converts raw logs into readable reports.
----
-## Malware Analysis
-AI explains suspicious scripts/code.
----
-## Detection Rule Generation
-AI generates:
- Sigma rules
- YARA rules Splunk queries
-
----
-
-## Security Copilots
-
-Examples:
-
- Microsoft Security Copilot Google Gemini Security
- CrowdStrike Charlotte AI
----
-# Beginner Projects for Your CV/GitHub
-These projects are excellent for portfolios.
----
-# 1. AI Security Log Analyzer
-Features:
- Upload logs
- Ask questions Detect anomalies
-
-Stack:
-
- Ollama LangChain
- ChromaDB
----
-# 2. Malware Explanation Assistant
-Input:
-Suspicious PowerShell script
-
-Output:
- Behavior summary
- MITRE techniques Risk level
-
----
-
-# 3. AI Phishing Detector
-
-Detect:
-
- Suspicious emails Fake URLs
- Social engineering
----
-# 4. Threat Intelligence Chatbot
-Train on:
- CVEs
- MITRE ATT&CK Security blogs
-
-Ask:
-
-> “Explain CVE-2025-xxxx.”
-
----
-
-# 5. AI SOC Copilot
-
-Features:
-
- Explain alerts Generate reports
- Suggest remediation
----
-# 6. AI Detection Rule Generator
-Generate:
- Sigma
- YARA Splunk SPL
-
----
-
-# 7. Network Traffic Analyzer
-
-Analyze:
-
- PCAP files Zeek logs
- DNS anomalies
----
+1. Download and deploy the [Ollama](https://ollama.com/) or [LM Studio](https://lmstudio.ai/) background engine.
+2. Open a system terminal and isolate a highly optimized open-weights model using the command-line execution string:
