@@ -1,8 +1,3 @@
-Here is the entire roadmap, technical installation guide, VMware configurations, and portfolios combined into a single, comprehensive markdown document.
-
-You can copy the code block below directly, save it as a `.md` file (like `README.md` for your GitHub repository), and commit it to your Git history.
-
-```markdown
 # Comprehensive Roadmap: AI + Cybersecurity Engineering
 
 This repository contains a structured, end-to-end learning roadmap designed to take you from absolute zero to a capable AI Cybersecurity Engineer. By tracking foundations in software engineering and security operations in parallel, this curriculum bridges the gap between pure data science and defensive infrastructure.
@@ -75,10 +70,6 @@ Running AI models locally is a foundational design requirement in cybersecurity 
 2. Open a system terminal and isolate a highly optimized open-weights model using the command-line execution string:
    ```bash
    ollama run llama3
-
-```
-
----
 
 ## 📚 Phase 4 — Learn RAG Systems (1–2 Months)
 
